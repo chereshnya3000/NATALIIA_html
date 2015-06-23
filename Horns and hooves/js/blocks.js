@@ -103,16 +103,28 @@ var defaultRenderer =  function(container, item) {
             container.appendChild(link);
         }
 
-    var container = document.getElementById("colorblock");
-        container.classList.add("container");
+	var renderItems  = function(items){
+		var container = document.getElementById("colorblock");
+			container.classList.add("container");
 
-     for (var j = 0; j < 6; j++)
-    {
-        for (var i = 0; i < items.length; i++) 
-        {
-            var item = items[i];
-            
-            baseRenderer(container, item, renderController(item));
-        }
-    } 
+			for (var j = 0; j < 6; j++)
+			{
+				for (var i = 0; i < items.length; i++) 
+				{
+					var item = items[i];
+					
+					baseRenderer(container, item, renderController(item));
+				}
+			} 
+	}
+	
+	
+addEventListener(window, "onload", );
+
+	
+
+
+	
+	
+	
         
