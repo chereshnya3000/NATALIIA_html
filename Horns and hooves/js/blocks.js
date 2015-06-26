@@ -41,6 +41,42 @@ var items = [
     },
     ];
 
+var sort = function(arrayItems)
+{
+    var categories = [];
+
+    for(var i=0; i < arrayItems.length; i++)
+    {
+        var item = arrayItems[i];
+        var key = item.category;
+        if(!categories[key])
+        {
+            categories[key] = [];
+        }
+
+        categories[key].push(item)
+    }
+    var internlItemIndex = 0;
+    
+    while(Object.keys(categories).length == 0)
+    {
+        for(var keyCategory in categories)
+        {
+            var item = categories[keyCategory].pop();
+    
+            if(categories[keyCategory].length == 0)
+            {
+                delete categories[keyCategory]
+            }
+    
+            arrayItems[internlItemIndex] = item;
+            internlItemIndex++;
+        }
+    }
+}
+
+sort(items);
+
 
 var defaultRenderer =  function(container, item) {
                            
@@ -119,7 +155,7 @@ var defaultRenderer =  function(container, item) {
 	}
 	
 	
-addEventListener(window, "onload", );
+	addEventListener(window, "onload", function () { renderItems(items) });
 
 	
 

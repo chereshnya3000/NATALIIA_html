@@ -8,3 +8,4 @@ function addEventListener(object, methodName, eventHandler){
 	
 	object[methodName] = function(){ event(); eventHandler() }; 
 }
+
