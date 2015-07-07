@@ -1,11 +1,11 @@
-function addEventListener(object, methodName, eventHandler){
-	
-	var event = object[methodName];
-	if(event == null)
+function addEventListener(object, methodName, newEventHandler){
+
+	var oldEvent = object[methodName];
+	if(oldEvent == null)
 	{
-	   event = function(){};
+	   oldEvent = function(){};
 	}
 	
-	object[methodName] = function(){ event(); eventHandler() }; 
+	object[methodName] = function(){ oldEvent.apply(object); newEventHandler.apply(object) }; 
 }
 
