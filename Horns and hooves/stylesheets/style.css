@@ -144,6 +144,7 @@ section{
   height: 60px;
   font-size: 12px;
   text-align: center;
+  position: relative;
 }
 
 .categoryBase img {
@@ -220,4 +221,21 @@ footer .left{
 footer .right{
 	text-align: right;
 	padding: 0 20px 10px 0;
+}
+
+.downloadBtn {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  margin-right: -30px;
+  width: 60px;
+  height: 15px;
+  background: lightgreen;
+  color: #666;
+  border: 1px solid lightgreen;
+}
+
+.enabled {
+  display: block;
 }
