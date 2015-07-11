@@ -9,14 +9,25 @@ addEventListener(window, "onload",
 
 	for(var i=0; i < imgArray.length; i++) {
 		// var src = imgArray[i].getAttribute("src");
-
-		var button = document.createElement('div');
+	    var img = imgArray[i];
+		var button = document.createElement('a');
 		var text = document.createTextNode("download");
 		button.appendChild(text);
 		button.setAttribute("class", "downloadBtn");
-		imgArray[i].parentNode.insertBefore(button, imgArray[i]);
+		button.setAttribute("href", img.src);
+		button.setAttribute("download", "");
 
-		addEventListener(imgArray[i], "onmouseover", (function(div) {
+		button.onclick = function (e) {
+		    if (!e) {
+		        window.event.cancelBubble = true;
+		    } else if (e.stopPropagation) {
+		        e.stopPropagation();
+		    }
+		}
+
+        imgArray[i].parentNode.insertBefore(button, img);
+
+		addEventListener(img, "onmouseover", (function (div) {
 			return function(){
 				div.classList.add("enabled");
 			}
