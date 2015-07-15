@@ -239,3 +239,21 @@ footer .right{
 .container  .enabled {
   display: block;
 }
+
+a.download {
+  display: block;
+}
+
+.downloadMe {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: yellow;
+  color: blue;
+  padding: 1px 2px;
+}
+
+.download:hover .downloadMe {
+  display: block;
+}
