@@ -202,11 +202,7 @@ section{
   display: block;
 }
 
-a.download {
-  display: block;
-}
-
-.downloadMe {
+a.downloadMe {
   display: none;
   position: absolute;
   width: 75px;
@@ -224,7 +220,7 @@ a.download {
   color: blue;
  }
 
-.download:hover .downloadMe {
+.downloadWrapper:hover .downloadMe {
   display: block;
  }
  

@@ -2,27 +2,24 @@
 addEventListener(window, "onload",
  function () {
 
-		var imgs = document.getElementsByTagName('img'),
-    L = imgs.length,
-    i, tmp;
+     var imgs = document.getElementsByTagName('img');
+            
+            for(var i = 0; i < imgs.length; i++) {
 
-		for (i = 0; i < L; i++) {
+		    var wrapper = document.createElement('div');
+		    wrapper.setAttribute("class", "downloadWrapper");
 
-		    tmp = document.createElement('a');
-		    tmp.setAttribute("class", "download");
-		    tmp.setAttribute("href", imgs[i].getAttribute("src"));
-		    tmp.setAttribute("download", "");
+		    imgs[i].parentNode.insertBefore(wrapper, imgs[i]);
+		    wrapper.appendChild(imgs[i]);
 
-		    imgs[i].parentNode.insertBefore(tmp, imgs[i]);
-		    tmp.appendChild(imgs[i]);
-
-		    var button = document.createElement('div');
+		    var button = document.createElement('a');
 		    button.setAttribute("class", "downloadMe");
+		    button.setAttribute("href", imgs[i].getAttribute("src"));
+		    button.setAttribute("download", "");
 
 		    var text = document.createTextNode("download");
 		    button.appendChild(text);
-		    tmp.appendChild(button);
-
+		    wrapper.appendChild(button);
 		};
 
  });
